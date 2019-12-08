@@ -3,4 +3,4 @@ import bme
 import gas
 
 while True:
-	print(pm.pm1)
+	print(pm1.reading_pm1)
