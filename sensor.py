@@ -1,3 +1,3 @@
 import pm
-from AQ import bme
-from AQ import gas
+import bme
+import gas
