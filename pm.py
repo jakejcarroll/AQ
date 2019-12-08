@@ -1,15 +1,17 @@
 #!/usr/bin/env python
 
-def pm():
-	import time
-	from pms5003 import PMS5003, ReadTimeoutError
-	import logging
-	
-	pms5003 = PMS5003()
-	
-	readings = pms5003.read()
-	
+import time
+from pms5003 import PMS5003, ReadTimeoutError
+import logging
+
+pms5003 = PMS5003()
+
+readings = pms5003.read()
+
+def pm1:
 	pm1 = (readings.pm_ug_per_m3(1.0))
-	pm25 = (readings.pm_ug_per_m3(2.5))
-	pm10 = (readings.pm_ug_per_m3(10))
+	print(pm1)
+	
+pm25 = (readings.pm_ug_per_m3(2.5))
+pm10 = (readings.pm_ug_per_m3(10))
       
