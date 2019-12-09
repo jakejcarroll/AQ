@@ -13,6 +13,8 @@ import atexit
 import ads1015
 import RPi.GPIO as GPIO
 
+from ISStreamer.Streamer import Streamer
+
 # --------- User Settings ---------
 BUCKET_NAME = "sensor"
 BUCKET_KEY = "QCK8NUHE59FU"
