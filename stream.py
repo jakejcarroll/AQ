@@ -18,15 +18,19 @@ readings = pms5003.read()
 
 def pm1():
 	readings = pms5003.read()
-	return (readings.pm_ug_per_m3(1.0))
+	pm1_reading = (readings.pm_ug_per_m3(1.0))
+	return pm1_reading
+	pm1_reading.flush()
 	
 
 def pm25():
+	readings = pms5003.read()
 	pm25_reading = (readings.pm_ug_per_m3(2.5))
 	return pm25_reading
 	pm25_reading.flush()
 	
 def pm10():
+	readings = pms5003.read()
 	pm10_reading = (readings.pm_ug_per_m3(10.0))
 	return pm10_reading
 	pm10_reading.flush()
@@ -64,6 +68,8 @@ def pressure():
 def main():
 	while True:
 		print(pm1())
+		print(pm25())
+		print(pm10())
 		print(temp())
 		print(humidity())
 		print(pressure())
