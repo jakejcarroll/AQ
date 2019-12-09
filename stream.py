@@ -35,9 +35,11 @@ def pm10():
 # main function
 
 def main():
-while True:
-	print(pm1)
-	print(pm25)
-	print(pm10)
-	time.sleep(5)
+	while True:
+		print(pm1)
+		print(pm25)
+		print(pm10)
+		time.sleep(5)
+		
+main()
 	
