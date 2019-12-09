@@ -224,7 +224,7 @@ def main():
 		streamer.log("PM10.0", pm10())
 		streamer.log("Humidity", humidity())
 		streamer.log("Pressure", pressure())
-		streamer.log("nh3", read_all()Mics6814Reading.nh3)
+		streamer.log("nh3", read_all().nh3)
 		time.sleep(2)
 		
 main()
