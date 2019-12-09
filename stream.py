@@ -15,7 +15,6 @@ except ImportError:
 pms5003 = PMS5003()
 readings = pms5003.read()
 
-print(readings)
 
 def pm1():
 	readings = pms5003.read()
@@ -64,6 +63,7 @@ def pressure():
 
 def main():
 	while True:
+		print(pm1())
 		print(temp())
 		print(humidity())
 		print(pressure())
