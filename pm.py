@@ -8,7 +8,7 @@ pms5003 = PMS5003()
 
 readings = pms5003.read()
 
-pm1_reading = 0
+pm1_reading = 0.0
 
 def pm1():
 	pm1_reading = (readings.pm_ug_per_m3(1.0))
