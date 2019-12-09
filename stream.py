@@ -19,9 +19,9 @@ readings = pms5003.read()
 def pm1():
 	readings = pms5003.read()
 	pm1_reading = (readings.pm_ug_per_m3(1.0))
+	pm1_reading = "{:.0f} PM 2.5".format(pm1_reading)
 	return pm1_reading
 	pm1_reading.flush()
-	
 
 def pm25():
 	readings = pms5003.read()
