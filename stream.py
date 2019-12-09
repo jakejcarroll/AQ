@@ -10,11 +10,9 @@ except ImportError:
     from smbus import SMBus
 
 
-#define pm
+#define pm functions
 
 pms5003 = PMS5003()
-readings = pms5003.read()
-
 
 def pm1():
 	readings = pms5003.read()
@@ -38,13 +36,7 @@ def pm10():
 	pm10_reading.flush()
 
 
-
-	
-	#input from calling function acts as request for specific pm(2.5/1/10)
-#e.g. pm25=pm(2.5)
-
-
-#BME sensor function
+#BME sensor functions
 
 bus = SMBus(1)
 bme280 = BME280(i2c_dev=bus)
