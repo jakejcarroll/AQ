@@ -42,7 +42,9 @@ bus = SMBus(1)
 bme280 = BME280(i2c_dev=bus)
 
 def temp():
-	return(bme280.get_temperature.format(0.2)())
+	temperature = (bme280.get_temperature())
+	temperature = "{:10.2f}".format(temperature)
+	return temperature
 
 
 # main function
