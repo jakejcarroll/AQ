@@ -50,6 +50,11 @@ def humidity():
 	humidity = bme280.get_humidity()
 	humidity = "{:.0f} %".format(humidity)
 	return humidity
+	
+def pressure():
+	 pressure = bme280.get_pressure()
+	 pressure = "{:.1f} hPa".format(pressure)
+	 return pressure
 
 
 # main function
@@ -58,6 +63,7 @@ def main():
 	while True:
 		print(temp())
 		print(humidity())
+		print(pressure())
 		time.sleep(5)
 		
 main()
