@@ -18,8 +18,8 @@ from ISStreamer.Streamer import Streamer
 from enviroplus import gas
 
 # --------- User Settings ---------
-BUCKET_NAME = "sensor"
-BUCKET_KEY = "QCK8NUHE59FU"
+BUCKET_NAME = "Monitoring"
+BUCKET_KEY = "6Q4MFAKM3HPD"
 ACCESS_KEY = "ist_cE0zFD5C1Y5DSKWsSGxIBcTRIOVqPO_x"
 # ---------------------------------
 
