@@ -214,6 +214,7 @@ def main():
 		print(temp())
 		print(humidity())
 		print(pressure())
+		print(read_nh3())
 		print(read_all())
 		time.sleep(5)
 		
