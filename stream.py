@@ -78,6 +78,8 @@ def pressure():
 def nh3():
 	gas_readings = gas.read_all()
 	nh3 = gas_readings.nh3
+	nh3 = "{:.2f} Ohms".format(nh3)
+	return nh3
 	
 
 
@@ -91,6 +93,7 @@ def main():
 		streamer.log("PM10.0", pm10())
 		streamer.log("Humidity", humidity())
 		streamer.log("Pressure", pressure())
+		streamer.log("NH3", nh3())
 		
 		print(gas.read_all())
 		time.sleep(2)
