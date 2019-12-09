@@ -21,7 +21,7 @@ def pm10():
 	pm10_reading = (readings.pm_ug_per_m3(10.0))
 	return pm10_reading
 
-
+pm10()
 
 
 	
