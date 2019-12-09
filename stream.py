@@ -15,6 +15,8 @@ import RPi.GPIO as GPIO
 
 from ISStreamer.Streamer import Streamer
 
+from enviroplus import gas
+
 # --------- User Settings ---------
 BUCKET_NAME = "sensor"
 BUCKET_KEY = "QCK8NUHE59FU"
@@ -225,7 +227,7 @@ def main():
 		streamer.log("Humidity", humidity())
 		streamer.log("Pressure", pressure())
 		
-		gas_readings = read_all()
+		gas_readings = gas.read_all()
 		streamer.log("nh3", gas_readings.nh3)
 		time.sleep(2)
 		
