@@ -15,6 +15,8 @@ except ImportError:
 pms5003 = PMS5003()
 readings = pms5003.read()
 
+print(readings)
+
 def pm1():
 	return (readings.pm_ug_per_m3(1.0))
 	
