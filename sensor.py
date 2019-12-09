@@ -1,4 +1,4 @@
-from pm import pm1
+import pm
 import bme
 import gas
 
