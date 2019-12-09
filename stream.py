@@ -44,7 +44,6 @@ bme280 = BME280(i2c_dev=bus)
 def temp():
 	
 	temperature = bme280.get_temperature()
-    temperature = round(temperature, 2)
     return temperature
 
 
