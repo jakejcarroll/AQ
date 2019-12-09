@@ -43,8 +43,12 @@ bme280 = BME280(i2c_dev=bus)
 
 def temp():
 	temperature = (bme280.get_temperature())
-	temperature = "{:.2f}".format(temperature)
+	temperature = "{:.1f}".format(temperature)
 	return temperature
+	
+def humidity():
+	humidity = bme280.get_humidity()
+	return humidity
 
 
 # main function
@@ -52,6 +56,7 @@ def temp():
 def main():
 	while True:
 		print(temp())
+		print(humidity())
 		time.sleep(5)
 		
 main()
