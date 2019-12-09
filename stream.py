@@ -48,7 +48,7 @@ def temp():
 	
 def humidity():
 	humidity = bme280.get_humidity()
-	humidity = "{:.0f%}".format(humidity)
+	humidity = "{:.0f}".format(humidity)
 	return humidity
 
 
