@@ -45,16 +45,19 @@ def temp():
 	temperature = (bme280.get_temperature())
 	temperature = "{:.1f} *C".format(temperature)
 	return temperature
+	temperature.flush()
 	
 def humidity():
 	humidity = bme280.get_humidity()
 	humidity = "{:.0f} %".format(humidity)
 	return humidity
+	humidity.flush()
 	
 def pressure():
 	 pressure = bme280.get_pressure()
 	 pressure = "{:.1f} hPa".format(pressure)
 	 return pressure
+	 pressure.flush()
 
 
 # main function
