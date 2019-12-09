@@ -75,8 +75,14 @@ def pressure():
 	 return pressure
 	 pressure.flush()
 
-
-
+def nh3():
+	gas_readings = gas.read_all()
+	nh3 = gas_readings.nh3
+	try:
+        nh3 = (nh3 * 56000) / (3.3 - nh3)
+    except ZeroDivisionError:
+        nh3 = 0
+	return nh3
 
 
 # main function
@@ -90,8 +96,7 @@ def main():
 		streamer.log("Humidity", humidity())
 		streamer.log("Pressure", pressure())
 		
-		gas_readings = gas.read_all()
-		streamer.log("nh3", gas_readings.nh3)
+		streamer.log("nh3", nh3())
 		time.sleep(2)
 		
 main()
