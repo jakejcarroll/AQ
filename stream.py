@@ -81,7 +81,17 @@ def nh3():
 	nh3 = "{:.2f} Ohms".format(nh3)
 	return nh3
 	
-
+def ox():
+	gas_readings = gas.read_all()
+	ox = gas_readings.oxidising
+	ox = "{:.2f} Ohms".format(ox)
+	return ox
+	
+def red():
+	gas_readings = gas.read_all()
+	red = gas_readings.reducing
+	red = "{:.2f} Ohms".format(red)
+	return red
 
 # main function
 
@@ -94,7 +104,8 @@ def main():
 		streamer.log("Humidity", humidity())
 		streamer.log("Pressure", pressure())
 		streamer.log("NH3", nh3())
-		
+		streamer.log("Oxidising", ox())
+		streamer.log("Reducing", red())
 		print(gas.read_all())
 		time.sleep(2)
 		
