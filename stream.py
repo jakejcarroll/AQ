@@ -219,13 +219,12 @@ def read_adc():
 def main():
 	while True:
 		streamer.log("Temperature ", temp())
-		print(pm1())
-		print(pm25())
-		print(pm10())
-		print(temp())
-		print(humidity())
-		print(pressure())
-		print(read_all())
+		streamer.log("PM1.0", pm1())
+		streamer.log("PM2.5", pm25())
+		streamer.log("PM10.0", pm10())
+		streamer.log("Humidity", humidity())
+		streamer.log("Pressure", pressure())
+		streamer.log("VOCs", read_all())
 		time.sleep(5)
 		
 main()
