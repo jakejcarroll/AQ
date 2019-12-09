@@ -33,21 +33,21 @@ pms5003 = PMS5003()
 def pm1():
 	readings = pms5003.read()
 	pm1_reading = (readings.pm_ug_per_m3(1.0))
-	pm1_reading = "{:.0f} PM1.0".format(pm1_reading)
+	pm1_reading = "{:.0f}".format(pm1_reading)
 	return pm1_reading
 	pm1_reading.flush()
 
 def pm25():
 	readings = pms5003.read()
 	pm25_reading = (readings.pm_ug_per_m3(2.5))
-	pm25_reading = "{:.0f} PM2.5".format(pm25_reading)
+	pm25_reading = "{:.0f}".format(pm25_reading)
 	return pm25_reading
 	pm25_reading.flush()
 	
 def pm10():
 	readings = pms5003.read()
 	pm10_reading = (readings.pm_ug_per_m3(10.0))
-	pm10_reading = "{:.0f} PM10.0".format(pm10_reading)
+	pm10_reading = "{:.0f} ".format(pm10_reading)
 	return pm10_reading
 	pm10_reading.flush()
 
@@ -74,6 +74,8 @@ def pressure():
 	 pressure = "{:.1f} hPa".format(pressure)
 	 return pressure
 	 pressure.flush()
+
+#gas functions
 
 def nh3():
 	gas_readings = gas.read_all()
@@ -106,7 +108,6 @@ def main():
 		streamer.log("NH3", nh3())
 		streamer.log("Oxidising", ox())
 		streamer.log("Reducing", red())
-		print(gas.read_all())
 		time.sleep(2)
 		
 main()
