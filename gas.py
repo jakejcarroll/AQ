@@ -139,5 +139,5 @@ def read_adc():
     setup()
     return read_all().adc
 
-print(read_all())
+print(read_all(ox))
         
