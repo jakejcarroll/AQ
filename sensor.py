@@ -3,5 +3,5 @@ import bme
 import gas
 
 while True:
-	pm.pm1()
+	print(pm.pm1())
 	
