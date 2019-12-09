@@ -10,6 +10,8 @@ readings = pms5003.read()
 
 def pm1():
 	return (readings.pm_ug_per_m3(1.0))
+	pm1.flush()
+	time.sleep(1)
 	
 pm25 = (readings.pm_ug_per_m3(2.5))
 pm10 = (readings.pm_ug_per_m3(10))
