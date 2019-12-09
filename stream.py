@@ -2,6 +2,13 @@
 
 import time
 from pms5003 import PMS5003, ReadTimeoutError
+from bme280 import BME280
+
+try:
+    from smbus2 import SMBus
+except ImportError:
+    from smbus import SMBus
+
 
 #define pm
 
@@ -29,14 +36,23 @@ def pm10():
 #e.g. pm25=pm(2.5)
 
 
+#BME sensor function
+
+bus = SMBus(1)
+bme280 = BME280(i2c_dev=bus)
+
+def temp():
+	
+	temperature = bme280.get_temperature()
+    temperature = round(temperature, 2)
+    return temperature
+
 
 # main function
 
 def main():
 	while True:
-		print(pm1)
-		print(pm25)
-		print(pm10)
+		print(temp())
 		time.sleep(5)
 		
 main()
