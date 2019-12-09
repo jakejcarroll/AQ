@@ -179,7 +179,7 @@ def read_all():
             analog = adc.get_voltage('ref/gnd')
             adc.set_programmable_gain(MICS6814_GAIN)
 
-    return (ox, red, nh3, analog)
+    return Mics6814Reading(ox, red, nh3, analog)
 
 
 def read_oxidising():
@@ -224,7 +224,9 @@ def main():
 		streamer.log("PM10.0", pm10())
 		streamer.log("Humidity", humidity())
 		streamer.log("Pressure", pressure())
-		streamer.log("nh3", read_all().nh3)
+		
+		gas_readings = read_all()
+		streamer.log("nh3", gas_readings.nh3)
 		time.sleep(2)
 		
 main()
