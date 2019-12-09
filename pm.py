@@ -14,8 +14,7 @@ def pm1():
 	pm1_reading = (readings.pm_ug_per_m3(1.0))
 	return pm1_reading
 	
-pm1()
-print(pm1_reading)
+print(pm1())
 	
 pm25 = (readings.pm_ug_per_m3(2.5))
 pm10 = (readings.pm_ug_per_m3(10))
