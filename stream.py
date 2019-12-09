@@ -13,6 +13,14 @@ import atexit
 import ads1015
 import RPi.GPIO as GPIO
 
+# --------- User Settings ---------
+BUCKET_NAME = "sensor"
+BUCKET_KEY = "QCK8NUHE59FU"
+ACCESS_KEY = "ist_cE0zFD5C1Y5DSKWsSGxIBcTRIOVqPO_x"
+# ---------------------------------
+
+streamer = Streamer(bucket_name=BUCKET_NAME, bucket_key=BUCKET_KEY, access_key=ACCESS_KEY)
+
 #gas global variables
 
 MICS6814_HEATER_PIN = 24
@@ -208,13 +216,13 @@ def read_adc():
 
 def main():
 	while True:
+		streamer.log("Temperature ", temp())
 		print(pm1())
 		print(pm25())
 		print(pm10())
 		print(temp())
 		print(humidity())
 		print(pressure())
-		print(read_nh3())
 		print(read_all())
 		time.sleep(5)
 		
