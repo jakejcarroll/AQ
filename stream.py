@@ -179,7 +179,7 @@ def read_all():
             analog = adc.get_voltage('ref/gnd')
             adc.set_programmable_gain(MICS6814_GAIN)
 
-    return Mics6814Reading(ox, red, nh3, analog)
+    return (ox, red, nh3, analog)
 
 
 def read_oxidising():
