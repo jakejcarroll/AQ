@@ -110,7 +110,6 @@ def CO():
 		print(co)
 		co = "{:.2f}".format(co)
 		print(co)
-		return co
 
 # main function
 
