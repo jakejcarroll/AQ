@@ -80,22 +80,22 @@ def pressure():
 def nh3():
 	gas_readings = gas.read_all()
 	nh3 = gas_readings.nh3
-	nh3 = "{:.2f} Ohms".format(nh3)
 	nh3 = (nh3/1000)
+	nh3 = "{:.2f}".format(nh3)
 	return nh3
 	
 def ox():
 	gas_readings = gas.read_all()
 	ox = gas_readings.oxidising
-	ox = "{:.2f} Ohms".format(ox)
 	ox = (ox/1000)
+	ox = "{:.2f} ".format(ox)
 	return ox
 	
 def red():
 	gas_readings = gas.read_all()
 	red = gas_readings.reducing
-	red = "{:.2f} Ohms".format(red)
 	red = (red/1000)
+	red = "{:.2f}".format(red)
 	return red
 
 # main function
