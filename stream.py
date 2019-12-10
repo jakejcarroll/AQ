@@ -109,6 +109,7 @@ def CO():
 	co = ((red_ratio**-1.177)*4.4638)
 	print(co)
 	co = "{:.2f}".format(co)
+	print(co)
 
 # main function
 
