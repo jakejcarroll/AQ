@@ -106,22 +106,29 @@ def CO():
 	gas_readings = gas.read_all()
 	red = gas_readings.reducing
 	red_ratio = (red / 74)
-	co = ((red_ratio**-1.177)*4.4638)
+	co = (((red_ratio)**-1.177)*4.4638)
 	return co
 	
 def ethanol():
 	gas_readings = gas.read_all()
 	red = gas_readings.reducing
 	red_ratio = (red / 74)
-	ethanol = ((red_ratio**-1.58)*1.363)
+	ethanol = (((red_ratio)**-1.58)*1.363)
 	return ethanol
 	
 def nh3_ethanol():
 	gas_readings = gas.read_all()
 	nh3 = gas_readings.nh3
 	nh3_ratio = (nh3 / 72)
-	ethanol = ((nh3_ratio**-2.781)*0.2068)
+	ethanol = (((nh3_ratio)**-2.781)*0.2068)
 	return ethanol
+	
+def no2():
+	gas_readings = gas.read_all()
+	ox = gas_readings.ox
+	ox_ratio = (ox/66)
+	no2 = (((ox_ratio)**0.9979)*0.1516)
+	return no2
 
 # main function
 
@@ -136,9 +143,10 @@ def main():
 		streamer.log("NH3", nh3())
 		streamer.log("Oxidising", ox())
 		streamer.log("Reducing", red())
-		streamer.log("Carbon Monoxide ", CO())
-		streamer.log("Ethanol ", ethanol())
-		streamer.log("Ethanol NH3 ", nh3_ethanol())
+		streamer.log("Carbon Monoxide", CO())
+		streamer.log("Ethanol", ethanol())
+		streamer.log("Ethanol NH3", nh3_ethanol())
+		streamer.log("Nitrogen Dioxide", no2())
 		time.sleep(2)
 		
 main()
