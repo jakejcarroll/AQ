@@ -101,6 +101,7 @@ def red():
 #CO / Carbon Monoxide 
 
 def CO():
+	co = 0.00
 	gas_readings = gas.read_all()
 	red = gas_readings.reducing
 	red_ratio = (red / 74)
@@ -108,7 +109,6 @@ def CO():
 	co = ((red_ratio**-1.177)*4.4638)
 	print(co)
 	co = "{:.2f}".format(co)
-	print(co)
 
 # main function
 
