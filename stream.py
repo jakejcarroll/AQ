@@ -125,7 +125,7 @@ def nh3_ethanol():
 	
 def no2():
 	gas_readings = gas.read_all()
-	ox = gas_readings.ox
+	ox = gas_readings.oxidising
 	ox_ratio = (ox/66)
 	no2 = (((ox_ratio)**0.9979)*0.1516)
 	return no2
