@@ -121,6 +121,18 @@ def ethanol():
 	ethanol = "{:.2f}".format(ethanol)
 	print(ethanol + " PPM")
 	return ethanol
+	
+def nh3_ethanol():
+	gas_readings = gas.read_all()
+	nh3 = gas_readings.nh3
+	print(nh3 + " nh3")
+	nh3_ratio = (nh3 / 72)
+	print(nh3_ratio + " ratio")
+	ethanol = ((nh3_ratio**-2.781)*0.2068)
+	print("%.5f" % ethanol + " PPM")
+	ethanol = "{:.2f}".format(ethanol)
+	print(ethanol + " PPM")
+	return ethanol
 
 # main function
 
@@ -141,5 +153,8 @@ def main():
 		
 while True:
 	ethanol()
+	print("/")
+	print("/")
+	nh3_ethanol()
 	time.sleep(2)
 	
