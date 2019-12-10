@@ -97,6 +97,16 @@ def red():
 	red = (red/1000)
 	red = "{:.2f}".format(red)
 	return red
+	
+#CO / Carbon Monoxide 
+
+def CO():
+	gas_readings = gas.read_all()
+	red = gas_readings.reducing
+	red_ratio = (red / 74)
+	co = ((red_ratio**-1.177)*4.4638)
+	co = "{:.2f}".format(co)
+	return co
 
 # main function
 
@@ -111,6 +121,7 @@ def main():
 		streamer.log("NH3", nh3())
 		streamer.log("Oxidising", ox())
 		streamer.log("Reducing", red())
+		streamer.log("Carbon Monoxide ", "PPM", CO())
 		time.sleep(2)
 		
 main()
