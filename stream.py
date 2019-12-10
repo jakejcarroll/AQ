@@ -107,31 +107,20 @@ def CO():
 	red = gas_readings.reducing
 	red_ratio = (red / 74)
 	co = ((red_ratio**-1.177)*4.4638)
-	co = "{:.2f}".format(co)
 	return co
 	
 def ethanol():
 	gas_readings = gas.read_all()
 	red = gas_readings.reducing
-	print(red)
 	red_ratio = (red / 74)
-	print(red_ratio)
 	ethanol = ((red_ratio**-1.58)*1.363)
-	print("%.5f" % ethanol)
-	ethanol = "{:.2f}".format(ethanol)
-	print(ethanol + " PPM")
 	return ethanol
 	
 def nh3_ethanol():
 	gas_readings = gas.read_all()
 	nh3 = gas_readings.nh3
-	print(nh3)
 	nh3_ratio = (nh3 / 72)
-	print(nh3_ratio)
 	ethanol = ((nh3_ratio**-2.781)*0.2068)
-	print("%.5f" % ethanol + " PPM")
-	ethanol = "{:.2f}".format(ethanol)
-	print(ethanol + " PPM")
 	return ethanol
 
 # main function
@@ -149,13 +138,6 @@ def main():
 		streamer.log("Reducing", red())
 		streamer.log("Carbon Monoxide ", "PPM", CO())
 		streamer.log("Ethanol ", "PPM", ethanol())
+		streamer.log("Ethanol NH3 ", "PPM", nh3_ethanol())
 		time.sleep(2)
-		
-while True:
-	gas.read_all()
-	ethanol()
-	print("/")
-	print("/")
-	nh3_ethanol()
-	time.sleep(2)
 	
