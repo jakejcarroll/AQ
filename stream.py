@@ -140,4 +140,6 @@ def main():
 		streamer.log("Ethanol ", "PPM", ethanol())
 		streamer.log("Ethanol NH3 ", "PPM", nh3_ethanol())
 		time.sleep(2)
+		
+main()
 	
