@@ -117,9 +117,9 @@ def ethanol():
 	red_ratio = (red / 74)
 	print(red_ratio)
 	ethanol = ((red_ratio**-1.58)*1.363)
-	print(ethanol)
+	print("%.5f" % ethanol)
 	ethanol = "{:.2f}".format(ethanol)
-	print(ethanol)
+	print(ethanol + " PPM")
 	return ethanol
 
 # main function
