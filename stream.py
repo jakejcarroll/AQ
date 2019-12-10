@@ -105,11 +105,10 @@ def CO():
 	gas_readings = gas.read_all()
 	red = gas_readings.reducing
 	red_ratio = (red / 74)
-	print(red_ratio)
 	co = ((red_ratio**-1.177)*4.4638)
-	print(co)
 	co = "{:.2f}".format(co)
-	print(co)
+	return co
+	
 
 # main function
 
@@ -127,7 +126,5 @@ def main():
 		streamer.log("Carbon Monoxide ", "PPM", CO())
 		time.sleep(2)
 		
-while True:
-	CO()
-	time.sleep(2)
+main()
 	
