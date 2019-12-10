@@ -109,6 +109,13 @@ def CO():
 	co = "{:.2f}".format(co)
 	return co
 	
+def ethanol():
+	gas_readings = gas.read_all()
+	red = gas_readings.reducing
+	red_ratio = (red / 74)
+	ethanol = ((red_ratio**-1.58)*1.363)
+	ethanol = "{:.2f}".format(ethanol)
+	return ethanol
 
 # main function
 
@@ -124,6 +131,7 @@ def main():
 		streamer.log("Oxidising", ox())
 		streamer.log("Reducing", red())
 		streamer.log("Carbon Monoxide ", "PPM", CO())
+		streamer.log("Ethanol ", "PPM", ethanol())
 		time.sleep(2)
 		
 main()
