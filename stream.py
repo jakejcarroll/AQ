@@ -152,6 +152,7 @@ def main():
 		time.sleep(2)
 		
 while True:
+	gas.read_all()
 	ethanol()
 	print("/")
 	print("/")
