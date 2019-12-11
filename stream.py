@@ -57,11 +57,6 @@ def pm10():
 bus = SMBus(1)
 bme280 = BME280(i2c_dev=bus)
 
-def temp():
-	temperature = (bme280.get_temperature())
-	temperature = "{:.1f} *C".format(temperature)
-	return temperature
-	temperature.flush()
 	
 def humidity():
 	humidity = bme280.get_humidity()
@@ -74,6 +69,23 @@ def pressure():
 	 pressure = "{:.1f} hPa".format(pressure)
 	 return pressure
 	 pressure.flush()
+	 
+def get_cpu_temperature():
+    with open("/sys/class/thermal/thermal_zone0/temp", "r") as f:
+        temp = f.read()
+        temp = int(temp) / 1000.0
+    return temp
+    
+def temp():
+	temperature = (bme280.get_temperature())
+	factor = 0.8
+	cpu_temps = [get_cpu_temperature()] * 5
+	cpu_temp = get_cpu_temperature()
+	 cpu_temps = cpu_temps[1:] + [cpu_temp]
+    avg_cpu_temp = sum(cpu_temps) / float(len(cpu_temps))
+    comp_temp = temperature - ((avg_cpu_temp - temperature) / factor)
+	return comp_temp
+	temperature.flush()
 
 #gas functions
 
