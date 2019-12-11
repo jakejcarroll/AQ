@@ -81,7 +81,7 @@ def temp():
 	factor = 0.8
 	cpu_temps = [get_cpu_temperature()] * 5
 	cpu_temp = get_cpu_temperature()
-	 cpu_temps = cpu_temps[1:] + [cpu_temp]
+	cpu_temps = cpu_temps[1:] + [cpu_temp]
     avg_cpu_temp = sum(cpu_temps) / float(len(cpu_temps))
     comp_temp = temperature - ((avg_cpu_temp - temperature) / factor)
 	return comp_temp
