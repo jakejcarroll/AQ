@@ -157,8 +157,7 @@ def main():
 		streamer.log("Reducing", red())
 		streamer.log("Carbon Monoxide", CO())
 		streamer.log("Ethanol", ethanol())
-		streamer.log("Ethanol NH3", nh3_ethanol())
-		streamer.log("Nitrogen Dioxide", no2())
+		streamer.log("Nitrogen Dioxide" + " PPM", no2())
 		streamer.flush()
 		time.sleep(2)
 		
