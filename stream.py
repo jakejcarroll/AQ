@@ -78,7 +78,7 @@ def get_cpu_temperature():
     
 def temp():
 	temperature = (bme280.get_temperature())
-	factor = 0.8
+	factor = 0.6
 	cpu_temps = [get_cpu_temperature()] * 5
 	cpu_temp = get_cpu_temperature()
 	cpu_temps = cpu_temps[1:] + [cpu_temp]
