@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 
 import time
-from pms5003 import PMS5003, ReadTimeoutError
+try:
+	from pms5003 import PMS5003, ReadTimeoutError
+except pms5003.ReadTimeoutError:
+	from pms5003 import PMS5003, ReadTimeoutError
+
+
 from bme280 import BME280
 
 try:
